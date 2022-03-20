@@ -1,27 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 import { Component } from 'react';
+import { Router } from '@reach/router';
 
-import 'bootstrap/dist/css/bootstrap.css'
+import './App.css';
+
+import Home from './Home'
+import Navigation from './Navigation';
+import Welcome from './Welcome';
+import Login from './Login';
+import Register from './Register';
+import Meetings from './Meetings';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      user: 'Vladimir'
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navigation user={this.state.user}/>
+        { this.state.user && <Welcome user={this.state.user}/> }
+        
+        <Router>
+          <Home path="/" user={this.state.user}/>
+          <Login path="/login"/>
+          <Register path="/register"/>
+          <Meetings path="/meetings"/>
+        </Router>
       </div>
     );
   }
