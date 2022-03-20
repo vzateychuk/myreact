@@ -5,9 +5,17 @@ import './App.css';
 import Home from './Home'
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      user: 'Ray'
+    };
+  }
+
   render() {
     return (
-        <Home/>
+        <Home user={this.state.user}/>
     );
   }
 
