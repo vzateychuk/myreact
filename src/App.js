@@ -3,6 +3,7 @@ import { Component } from 'react';
 import './App.css';
 
 import Home from './Home'
+import Navigation from './Navigation';
 import Welcome from './Welcome';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navigation user={this.state.user}/>
         { this.state.user && <Welcome user={this.state.user}/> }
         <Home user={this.state.user}/>
       </div>
