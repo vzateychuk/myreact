@@ -1,6 +1,6 @@
 import { Component } from "react";
 import {FaUsers} from 'react-icons/fa';
-
+import { Link } from '@reach/router';
 
 class Navigation extends Component {
     render() {
@@ -9,28 +9,28 @@ class Navigation extends Component {
             <nav className="site-nav family-sans navbar navbar-expand bg-primary navbar-dark higher">
                 <div className="container-fluid">
                     <div className="navbar-nav ml-auto">
-                        <a className="navbar-brand" href="/">
+                        <Link className="navbar-brand" to="/">
                             <FaUsers className="mr-1"/> Meeting Log
-                        </a>  
+                        </Link>  
                         {user && (
-                            <a className="nav-item nav-link" href="/meetings">
+                            <Link className="nav-item nav-link" to="/meetings">
                                 Meetings
-                            </a>  
+                            </Link>  
                         )}
                         {user && (
-                            <a className="nav-item nav-link" href="/login">
+                            <Link className="nav-item nav-link" to="/login">
                                 Log out
-                            </a> 
+                            </Link> 
                         )}
                         {!user && (
-                            <a className="nav-item nav-link" href="/login">
+                            <Link className="nav-item nav-link" to="/login">
                                 Log in
-                            </a>  
+                            </Link>  
                         )}
                         {!user && (
-                            <a className="nav-item nav-link" href="/register">
+                            <Link className="nav-item nav-link" to="/register">
                                 register
-                            </a> 
+                            </Link> 
                         )}   
                     </div>
                 </div>
