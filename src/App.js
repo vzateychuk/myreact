@@ -1,7 +1,6 @@
-import './App.css';
 import { Component } from 'react';
 
-import 'bootstrap/dist/css/bootstrap.css'
+import './App.css';
 
 import Home from './Home'
 
