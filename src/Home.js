@@ -34,7 +34,6 @@ class Home extends Component {
 
                 {user && (
                     <span>
-                       <h2>Hello, {user}!</h2> 
                         <a href="/meetings" className="btn btn-primary">
                             Meetings
                         </a>                
